@@ -9,15 +9,15 @@ diff-sql:
 	@CONN=target vendor/bin/doctrine orm:schema-tool:update --dump-sql
 
 update:
-	@CONN=target vendor/bin/doctrine orm:schema-tool:update 
 	@echo use make update-force if you are sure
+	@CONN=target vendor/bin/doctrine orm:schema-tool:update 
 
 update-force:
 	@CONN=target vendor/bin/doctrine orm:schema-tool:update --force
 
 drop:
-	@CONN=target vendor/bin/doctrine orm:schema-tool:drop 
 	@echo use make drop-force if you are sure
+	@CONN=target vendor/bin/doctrine orm:schema-tool:drop 
 
 drop-force:
 	@CONN=target vendor/bin/doctrine orm:schema-tool:drop --force

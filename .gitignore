@@ -3,3 +3,4 @@ src/*.php
 config/yaml/*.yml
 config/db.yml
 *~
+composer.lock
