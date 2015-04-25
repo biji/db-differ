@@ -1,0 +1,14 @@
+database:
+  source:
+    driver: pdo_mysql
+    user: root
+    password: 1234
+    dbname: db1
+    host: localhost 
+  target:
+    driver: pdo_mysql
+    user: root
+    password: 1234
+    dbname: db1
+    host: remote-server 
+

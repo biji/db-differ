@@ -1,0 +1,16 @@
+{
+    "name": "khad/doctrine",
+    "require": {
+        "doctrine/orm": "~2.5",
+        "symfony/yaml": "~2.6"
+    },
+    "authors": [
+        {
+            "name": "Khad",
+            "email": "superbiji@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-0": {"": "src/"}
+    }
+}
