@@ -1,5 +1,6 @@
+
 default:
-	@echo Commands are learn, diff-sql, update, drop
+	@echo Commands are learn, diff-sql, update, drop, clean
 
 learn:
 	@CONN=source vendor/bin/doctrine orm:convert-mapping -f --from-database yml config/yaml/
@@ -21,4 +22,8 @@ drop:
 
 drop-force:
 	@CONN=target vendor/bin/doctrine orm:schema-tool:drop --force
+
+clean:
+	@rm -rf config/yaml/*.yml src/*.php
+
 

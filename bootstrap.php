@@ -19,7 +19,8 @@ $config = Setup::createYAMLMetadataConfiguration(array(__DIR__."/config/yaml"), 
     'dbname'   => 'db',
     'host'     => 'db.local'
 );*/
-$db_config = Yaml::parse(file_get_contents(__DIR__ . "/config/db.yml"));
+$db_yml = getenv("DB_YML") == "" ? __DIR__ . "/config/db.yml" : __DIR__ . "/config/" . getenv("DB_YML");
+$db_config = Yaml::parse(file_get_contents( $db_yml ));
 $conn = $db_config["database"][getenv("CONN")];
 
 // obtaining the entity manager

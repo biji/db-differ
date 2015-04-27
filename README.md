@@ -1,5 +1,5 @@
 # db-differ
-General database comparer, updater
+General database schema comparer, updater
 
 (c) Khad
 
@@ -11,6 +11,8 @@ To use:
 4. cp config/db.yml.asli config/db.yml
 5. Edit config/db.yml
 6. make [command]
+7. if you have multiple configuration:
+    DB_YML=db1.yml make [command]
 
 Commands are:
     learn, diff-sql, update, drop
@@ -30,4 +32,9 @@ Update target database using difference from source database
 make drop:
 
 Drop tables from target database
+
+make clean
+
+Clean generated files
+
 
