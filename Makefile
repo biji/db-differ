@@ -1,6 +1,6 @@
 
 default:
-	@echo Commands are learn, diff-sql, update, drop, clean
+	@echo Commands are learn, diff-sql, update, update-source, drop, clean
 
 learn:
 	@CONN=source vendor/bin/doctrine orm:convert-mapping -f --from-database yml config/yaml/
@@ -25,5 +25,14 @@ drop-force:
 
 clean:
 	@rm -rf config/yaml/*.yml src/*.php
+
+update-source:
+	@echo use make update-source-force if you are sure
+	@CONN=source vendor/bin/doctrine orm:generate:entities src/
+	@CONN=source vendor/bin/doctrine orm:schema-tool:update 
+
+update-source-force:
+	@CONN=source vendor/bin/doctrine orm:generate:entities src/
+	@CONN=source vendor/bin/doctrine orm:schema-tool:update --force
 
 

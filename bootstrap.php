@@ -19,7 +19,7 @@ $config = Setup::createYAMLMetadataConfiguration(array(__DIR__."/config/yaml"), 
     'dbname'   => 'db',
     'host'     => 'db.local'
 );*/
-$db_yml = getenv("DB_YML") == "" ? __DIR__ . "/config/db.yml" : __DIR__ . "/config/" . getenv("DB_YML");
+$db_yml = getenv("DB_YML") == "" ? __DIR__ . "/config/db.yml" : __DIR__ . "/" . getenv("DB_YML");
 $db_config = Yaml::parse(file_get_contents( $db_yml ));
 $conn = $db_config["database"][getenv("CONN")];
 

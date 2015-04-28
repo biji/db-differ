@@ -1,8 +1,8 @@
 {
-    "name": "khad/doctrine",
+    "name": "khad/db-differ",
     "require": {
-        "doctrine/orm": "~2.5",
-        "symfony/yaml": "~2.6"
+        "symfony/yaml": "~2.6",
+        "doctrine/orm": "~2.5"
     },
     "authors": [
         {
