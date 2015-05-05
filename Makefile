@@ -24,7 +24,7 @@ drop-force:
 	@CONN=target vendor/bin/doctrine orm:schema-tool:drop --force
 
 clean:
-	@rm -rf config/yaml/*.yml src/*.php
+	@rm -rf config/yaml/*.yml src/*.php config/yaml/*~ src/*~
 
 update-source:
 	@echo use make update-source-force if you are sure

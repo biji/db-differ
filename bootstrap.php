@@ -26,9 +26,15 @@ $conn = $db_config["database"][getenv("CONN")];
 // obtaining the entity manager
 $entityManager = EntityManager::create($conn, $config);
 
+// custom type
+require_once "MyNumeric.php";
+Doctrine\DBAL\Types\Type::addType('mynumeric', 'DbDiffer\Types\MyNumeric');
+
+
 // postgresql mapping
 $platform = $entityManager->getConnection()->getDatabasePlatform();
 $platform->registerDoctrineTypeMapping('_int4', 'integer');
 $platform->registerDoctrineTypeMapping('abstime', 'string'); // date?
 $platform->registerDoctrineTypeMapping('oid', 'string');
+$platform->registerDoctrineTypeMapping('numeric', 'mynumeric');
 
